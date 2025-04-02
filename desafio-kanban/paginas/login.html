@@ -30,7 +30,7 @@
         <section id="cadastro" style="display: none;">
             <img src="../imgs/logo.png" alt="logo Kanban - Work Management">
             <h2 class="text-center inter-title">Cadastre-se!</h2>
-            <form method="post">
+            <form method="post" id="form-cadastro">
                 <label for="cadastro-nome">Nome:</label><br>
                 <input type="text" name="cadastro-nome" id="cadastro-nome" required><br>
                 <label for="cadastro-email">E-mail</label><br>
@@ -46,6 +46,16 @@
             </div>
         </section>
     </main>
+
+    <button onclick="limparStorage()">Limpar LocalStorage</button>
+
+    <script>
+    function limparStorage() {
+        localStorage.clear();
+        alert("LocalStorage foi limpo!");
+    }
+    </script>
+    
 
     <script>
         $(document).ready(function() {
@@ -65,6 +75,7 @@
     </script>
 
     <script src="../js/login.js"></script>
+    <script src="../js/cadastro.js"></script>
 
     <footer><p>&copy; Produzido por Otávio Henrique Vicente. Todos os direitos reservados. 2025.</p></footer>
 
