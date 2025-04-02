@@ -1,0 +1,30 @@
+#foto-usuario {
+    max-width: 10rem;
+}
+
+#perfil {
+    display: flex;
+    align-items: center;
+}
+
+#perfil div {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#retorno {
+    align-items: start;
+    padding: 0.4rem 0.3rem 0rem 0.3rem;
+    margin-right: 0.5rem;
+}
+
+#logout {
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+#logout:hover {
+    background-color: rgba(165, 42, 42, 0.514);
+    color: white;
+    transition: 0.4s;
+}

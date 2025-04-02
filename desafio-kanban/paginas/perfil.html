@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+
+    <link rel="stylesheet" href="../estilos/perfil.css">
+    <link rel="stylesheet" href="../estilos/login.css">
+</head>
+<body>
+    <main>
+        <section id="perfil">
+            <div>        
+                <a href="" id="retorno"><img src="../imgs/retorno.png" alt="Retornar"></a>
+                <p>Voltar</p>
+            </div>
+            <img id="foto-usuario" src="../imgs/user.png" alt="Usuário" class="perfil-img">
+            <form method="post" class="perfil-form">
+                <label for="cadastro-nome">Nome Completo:</label>
+                <input type="text" name="login-nome" id="cadastro-nome" required>
+
+                <label for="login-email">E-mail</label>
+                <input type="email" name="email" id="login-email" required>
+
+                <label for="login-senha">Senha</label>
+                <input type="password" name="senha" id="login-senha" required>
+
+                <div>
+                    <input class="enviar" type="submit" value="Salvar">
+                    <a id="logout" href="../paginas/login.html">Logout</a>
+                </div>
+            </form>
+        </section>     
+    </main>
+</body>
+</html>

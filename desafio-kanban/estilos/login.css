@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Bebas+Neue&family=Doto:wght@100..900&family=Galindo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@1,100..900&family=Poppins:wght@500;600;700&family=Sigmar&display=swap');  
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-width: 35rem;
+    border: 3px solid rgba(0, 0, 0, 0.123);
+    border-radius: 8px;
+    font-size: 18px;
+    padding: 1rem;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.089);
+}
+
+label {
+    margin-top: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: solid 2px black;
+    border-radius: 8px;
+}
+
+input.enviar {
+    display: flex;
+    margin: auto;
+    margin-top: 0.5rem;
+    width: 50%;
+    background-color: rgba(138, 206, 138, 0.459);
+    font-size: medium;
+}
+input.enviar:hover {
+    background-color: rgba(116, 238, 116, 0.589);
+    transition: 0.5s;
+}
+
+section div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-inline: 1rem;
+    margin-top: 0.8rem;
+}
+
+div a {
+    text-decoration: none;
+    color: black;
+    padding: 0.2rem;
+}
+div a:hover {
+    background-color: rgba(128, 128, 128, 0.212);
+    border-radius: 8px;
+}
+
+footer {
+    display: flex;
+    bottom: 0;
+    position: fixed;
+}
