@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log(localStorage);
+
     document.getElementById("form-login").addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -12,10 +14,24 @@ document.addEventListener("DOMContentLoaded", function () {
         const usuarioEncontrado = usuarios.find(user => user.email === emailDigitado && user.senha === senhaDigitada);
 
         if (usuarioEncontrado) {
-            alert(`Bem-vindo, ${usuarioEncontrado.nome}! Login realizado com sucesso.`);
-            window.location.href = "dashboard.html"; // Redireciona para outra página
+            // **SALVA O USUÁRIO LOGADO NO LOCALSTORAGE**
+            localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
+
+            Swal.fire({
+                title: `Bem-vindo, ${usuarioEncontrado.nome}!`,
+                text: 'Login realizado com sucesso.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = "./perfil.html"; // Redireciona para a página de perfil
+            });
         } else {
-            alert("E-mail ou senha incorretos!");
+            Swal.fire({
+                title: 'Erro!',
+                text: 'E-mail ou senha incorretos!',
+                icon: 'error',
+                confirmButtonText: 'Tentar novamente'
+            });
         }
     });
 });

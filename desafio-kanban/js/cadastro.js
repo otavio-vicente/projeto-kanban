@@ -7,20 +7,55 @@ document.addEventListener("DOMContentLoaded", function () {
         const senha = document.getElementById("cadastro-senha").value;
         const confirmacaoSenha = document.getElementById("confirmacao-senha").value;
 
-        // Verifica se as senhas coincidem
-        if (senha !== confirmacaoSenha) {
-            alert("As senhas não coincidem!");
-            return;
+        // Pegando os spans de erro
+        const erroNome = document.getElementById("erro-nome");
+        const erroEmail = document.getElementById("erro-email");
+        const erroSenha = document.getElementById("erro-senha");
+        const erroConfirmacao = document.getElementById("erro-confirmacao");
+
+        // Resetando mensagens de erro
+        erroNome.textContent = "";
+        erroEmail.textContent = "";
+        erroSenha.textContent = "";
+        erroConfirmacao.textContent = "";
+
+        let isValid = true;
+
+        // Validação do nome
+        if (nome.length < 3) {
+            erroNome.textContent = "O nome deve ter pelo menos 3 caracteres.";
+            isValid = false;
         }
 
-        // Obtém a lista de usuários cadastrados ou cria um array vazio se não existir
+        // Validação do email
+        if (!email.includes("@") || !email.includes(".")) {
+            erroEmail.textContent = "Digite um e-mail válido.";
+            isValid = false;
+        }
+
+        // Obtém a lista de usuários cadastrados
         let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
         // Verifica se o e-mail já está cadastrado
         if (usuarios.some(user => user.email === email)) {
-            alert("E-mail já cadastrado! Tente outro.");
-            return;
+            erroEmail.textContent = "E-mail já cadastrado! Tente outro.";
+            isValid = false;
         }
+
+        // Validação da senha
+        if (senha.length < 6) {
+            erroSenha.textContent = "A senha deve ter no mínimo 6 caracteres.";
+            isValid = false;
+        }
+
+        // Validação da confirmação de senha
+        if (senha !== confirmacaoSenha) {
+            erroConfirmacao.textContent = "As senhas não coincidem.";
+            isValid = false;
+        }
+
+        // Se houver erros, não prosseguir
+        if (!isValid) return;
 
         // Adiciona o novo usuário ao array
         usuarios.push({ nome, email, senha });
@@ -28,13 +63,19 @@ document.addEventListener("DOMContentLoaded", function () {
         // Atualiza o localStorage
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-        alert("Cadastro realizado com sucesso! Faça login agora.");
+        // Exibe mensagem de sucesso com SweetAlert
+        Swal.fire({
+            title: "Cadastro realizado!",
+            text: "Agora você pode fazer login.",
+            icon: "success",
+            confirmButtonText: "OK"
+        }).then(() => {
+            // Redireciona para a tela de login
+            document.getElementById("cadastro").style.display = "none";
+            document.getElementById("login").style.display = "block";
 
-        // Redireciona para a tela de login sem quebrar o layout
-        document.getElementById("cadastro").style.display = "none";
-        document.getElementById("login").style.display = "block";
-
-        // Limpa os campos do formulário
-        document.getElementById("form-cadastro").reset();
+            // Limpa os campos do formulário
+            document.getElementById("form-cadastro").reset();
+        });
     });
 });

@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Perfil - KanBan</title>
 
     <link rel="stylesheet" href="../estilos/perfil.css">
     <link rel="stylesheet" href="../estilos/login.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="shortcut icon" href="../imgs/favicon.png" type="image/png">
+
 </head>
 <body>
     <main>
         <section id="perfil">
             <div>        
-                <a href="" id="retorno"><img src="../imgs/retorno.png" alt="Retornar"></a>
+                <a href="../index.html" id="retorno"><img src="../imgs/retorno.png" alt="Retornar"></a>
                 <p>Voltar</p>
             </div>
-            <img id="foto-usuario" src="../imgs/user.png" alt="Usuário" class="perfil-img">
+
+            <div id="container-foto">
+                <img id="foto-usuario" src="../imgs/user.png" alt="Usuário" class="perfil-img">
+                <label for="input-foto" id="icone-editar">
+                    <img src="../imgs/edit.png" alt="Editar">
+                </label>
+                <input type="file" id="input-foto" accept="image/*" style="display: none;">
+            </div>
+
             <form method="post" class="perfil-form">
                 <label for="cadastro-nome">Nome Completo:</label>
                 <input type="text" name="login-nome" id="cadastro-nome" required>
@@ -33,5 +46,10 @@
             </form>
         </section>     
     </main>
+
+    <footer><p>&copy; Produzido por Otávio Henrique Vicente. Todos os direitos reservados. 2025.</p></footer>
+
+    <script src="../js/perfil.js"></script>
+
 </body>
 </html>

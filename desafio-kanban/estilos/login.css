@@ -17,6 +17,11 @@ body {
     justify-content: center;
 }
 
+main {
+    display: flex;
+    flex: 1;
+}
+
 section {
     margin: auto;
     box-sizing: border-box;
@@ -40,6 +45,10 @@ input {
     margin-bottom: 0.5rem;
     border: solid 2px black;
     border-radius: 8px;
+}
+
+#cadastro form span {
+    color: red;
 }
 
 input.enviar {
@@ -73,8 +82,33 @@ div a:hover {
     border-radius: 8px;
 }
 
+@media (max-width: 600px) {
+    #login, #cadastro, #perfil {
+        max-width: 25rem;
+    }
+} 
+@media (max-width: 415px) {
+    #login, #cadastro, #perfil {
+        max-width: 18rem;
+    }
+    .login {
+        font-size: smaller;
+    }
+    footer {
+        font-size: small;
+    }
+} 
+@media (max-width: 321px) {
+    footer {
+        font-size: smaller;
+    }
+    #cadastro {
+        margin-top: 12rem;
+    }
+}  
+
 footer {
     display: flex;
     bottom: 0;
-    position: fixed;
+    text-align: center;
 }

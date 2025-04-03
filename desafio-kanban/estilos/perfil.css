@@ -1,10 +1,46 @@
+#container-foto {
+    position: relative;
+    display: inline-block;
+}
+
 #foto-usuario {
-    max-width: 10rem;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 10px auto;
+    border: 2px solid #ddd;
+}
+
+#icone-editar {
+    position: absolute;
+    bottom: 5px; /* Move para a parte inferior */
+    left: 60%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centralizar */
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#icone-editar img {
+    width: 18px;
+    height: 18px;
 }
 
 #perfil {
     display: flex;
+    flex-direction: column; /* Organiza os elementos em coluna */
     align-items: center;
+    text-align: start;
+    padding: 20px;
 }
 
 #perfil div {
@@ -22,9 +58,19 @@
 #logout {
     padding: 0.5rem;
     border-radius: 8px;
-}
-#logout:hover {
-    background-color: rgba(165, 42, 42, 0.514);
-    color: white;
+    background-color: transparent;
+    border: 1px solid brown;
+    color: brown;
     transition: 0.4s;
+    text-decoration: none;
+}
+
+#logout:hover {
+    background-color: brown;
+    color: white;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
 }
