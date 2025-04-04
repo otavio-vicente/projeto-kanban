@@ -37,12 +37,16 @@
                 <input type="email" name="email" id="login-email" required>
 
                 <label for="login-senha">Senha</label>
-                <input type="password" name="senha" id="login-senha" required>
+                <div class="senha-container">
+                    <input type="password" name="senha" id="login-senha" required>
+                    <img src="../imgs/olho.png" alt="Mostrar senha" id="toggle-senha" class="icone-senha">
+                </div>
 
-                <div>
+                <div class="botoes">
                     <input class="enviar" type="submit" value="Salvar">
                     <a id="logout" href="./login.html">Logout</a>
                 </div>
+                
             </form>
         </section>     
     </main>

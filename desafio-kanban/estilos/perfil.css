@@ -49,10 +49,37 @@
     justify-content: start;
 }
 
+.senha-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-top: 0;
+}
+
+.icone-senha {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    margin-right: 1rem;
+    margin-bottom: 0.3rem;
+    right: 10px;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+}
+
 #retorno {
     align-items: start;
     padding: 0.4rem 0.3rem 0rem 0.3rem;
     margin-right: 0.5rem;
+}
+
+.botoes {
+    padding: 0;
+
 }
 
 #logout {
@@ -63,6 +90,10 @@
     color: brown;
     transition: 0.4s;
     text-decoration: none;
+    width: 50%;
+    margin-left: 5rem;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 #logout:hover {

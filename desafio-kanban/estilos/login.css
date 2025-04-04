@@ -56,12 +56,20 @@ input.enviar {
     margin: auto;
     margin-top: 0.5rem;
     width: 50%;
-    background-color: rgba(138, 206, 138, 0.459);
     font-size: medium;
+    padding: 0.6rem;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid #0a5c0a;
+    color: #0a5c0a;
+    transition: 0.4s;
+    text-decoration: none;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
 }
 input.enviar:hover {
-    background-color: rgba(116, 238, 116, 0.589);
-    transition: 0.5s;
+    background-color: #129c1275;
 }
 
 section div {

@@ -7,14 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const emailDigitado = document.getElementById("login-email").value.trim();
         const senhaDigitada = document.getElementById("login-senha").value;
 
-        // Obtém a lista de usuários cadastrados
         const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-        // Verifica se o e-mail e a senha correspondem a um usuário cadastrado
         const usuarioEncontrado = usuarios.find(user => user.email === emailDigitado && user.senha === senhaDigitada);
 
         if (usuarioEncontrado) {
-            // **SALVA O USUÁRIO LOGADO NO LOCALSTORAGE**
             localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
 
             Swal.fire({
@@ -23,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 icon: 'success',
                 confirmButtonText: 'OK'
             }).then(() => {
-                window.location.href = "./perfil.html"; // Redireciona para a página de perfil
+                window.location.href = "../index.html";
             });
         } else {
             Swal.fire({
